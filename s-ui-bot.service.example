@@ -1,0 +1,16 @@
+[Unit]
+Description=S-UI Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=your_user
+WorkingDirectory=/path/to/s-ui-bot
+Environment="PATH=/path/to/s-ui-bot/.venv/bin"
+ExecStart=/path/to/s-ui-bot/.venv/bin/python main.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+
